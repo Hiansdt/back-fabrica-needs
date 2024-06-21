@@ -19,18 +19,18 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-MODE = os.environ.get("MODE")
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-
-DEBUG = os.getenv("DEBUG", "False").lower() == 'true'
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(' ')
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://render.com/"]
 
 
 
 # Application definition
+BASE_DIR = Path(__file__).resolve().parent.parent
+MODE = os.environ.get("MODE")
+
+
+SECRET_KEY = "95966174082aa20c731af4acfd9245f4"
+
+DEBUG = os.getenv("DEBUG", "False").lower() == 'true'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -97,7 +97,7 @@ DATABASES = {
 }
 
 database_url = os.environ.get("DATABASE_URL")
-DATABASES['default'] = dj_database_url.parse(database_url)
+# DATABASES['default'] = dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -135,9 +135,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
+# # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -155,3 +155,5 @@ FILE_UPLOAD_PERMISSIONS = 0o640
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://render.com/"]
