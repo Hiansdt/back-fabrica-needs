@@ -30,7 +30,7 @@ MODE = os.environ.get("MODE")
 
 SECRET_KEY = "95966174082aa20c731af4acfd9245f4"
 
-DEBUG = os.getenv("DEBUG", "False").lower() == 'true'
+DEBUG = "FALSE"
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -135,7 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 # # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
